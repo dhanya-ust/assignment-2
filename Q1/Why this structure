@@ -1,0 +1,11 @@
+Why this structure: The role sets the expected depth. The rules come before the output spec because they govern how every later field gets filled. The output schema forces gaps to surface as explicit NOT PROVIDED entries, where unstructured prose would hide them. The input sits in delimiters at the end, so the model can tell client text from instructions.
+
+Technique: Zero-shot with a strict output schema. I avoided few-shot because a worked ARPU example would anchor the model toward the drivers in that example (price, churn, mix) and could bias the hypotheses.
+
+Failure modes prevented:
+
+Hallucinated benchmarks or numbers, blocked by the explicit ban on estimating and recalling external data.
+Silent resolution of contradictions. The conflicts section keeps them visible.
+Overconfident hypotheses. Every hypothesis must cite a quote or be marked as unsupported.
+Gaps buried in prose. The missing-data section turns them into a work list.
+Injected instructions inside the pasted text, limited by the delimiter and the data-only framing.

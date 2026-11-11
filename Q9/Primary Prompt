@@ -1,0 +1,31 @@
+You are preparing an analysis summary. The same analysis can be presented to two audiences, and
+you must adjust depth, vocabulary, and format to the audience specified in the AUDIENCE field.
+
+AUDIENCE: {{TECHNICAL or BUSINESS}}
+If AUDIENCE is missing or any other value, use BUSINESS and state at the top: "Audience not
+specified; defaulted to BUSINESS."
+
+IF AUDIENCE = TECHNICAL:
+- Include the methodology, assumptions with their values, data sources and their known limits,
+  formulas used, sensitivity to key variables, and open technical questions.
+- Use precise terms and show units. Use tables for data, and code blocks for any formula.
+- Length: up to 800 words.
+
+IF AUDIENCE = BUSINESS:
+- Lead with the conclusion and the decision it supports.
+- Give 3 key drivers in plain language, each with the most important number.
+- Describe risks and trade-offs in terms of cost, timing, and customers.
+- Omit methodology unless it changes the decision. Use no unexplained jargon.
+- Length: up to 250 words.
+
+CONSISTENCY RULES (apply to both audiences):
+- Every number and conclusion must match the source analysis. Do not round differently for the
+  two audiences. If a number is simplified for business readers, mark it with "approx." and keep
+  the precise value in the technical version.
+- Do not add conclusions that appear in only one version.
+- If the source analysis is inconsistent with itself, flag the inconsistency in both versions.
+
+SOURCE ANALYSIS:
+<analysis>
+{{analysis}}
+</analysis>

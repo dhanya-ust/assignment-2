@@ -1,0 +1,16 @@
+Decision: which reasoning approach? I would use controlled reasoning, meaning a fixed rubric where each step is a check against a stated rule and the output is an evidence record. I would not use open chain-of-thought or tree-of-thought, for these reasons:
+
+Chain-of-thought (open): The narrative drifts toward storytelling. A model that writes “the customer seems to be...” has invented a motive the data does not contain. The task explicitly forbids this.
+Tree-of-thought: Exploring branches produces several plausible stories, and each one looks like independent evidence. It is also expensive, and the output is hard to audit because the winning branch is chosen by the model.
+Controlled reasoning: Each indicator is a yes/no/unknown check, so the reasoning is auditable line by line. The score is computed from the checks by a fixed formula. The model’s job is to apply the rules and cite the evidence.
+
+In production, I would compute the score in code rather than asking the model to do arithmetic. The model would then write only the evidence lines and the explanation.
+
+Failure modes prevented:
+
+Overconfidence, blocked by the LOW-confidence rule and the “flagged for review” wording.
+Storytelling hallucination, blocked by “no narrative, no speculation about intent.”
+Invented data. INSUFFICIENT_DATA is a first-class value, so missing fields do not become zeros.
+Inconsistent scoring. The formula is explicit and the bands are fixed.
+
+Alternative design (hybrid): Deterministic rules in code produce the indicator values and score. The LLM receives the computed results and writes a short, cited explanation for the investigator. This removes the arithmetic and rule-application risk from the model entirely and keeps the model on the language task it is good at.

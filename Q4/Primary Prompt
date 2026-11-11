@@ -1,0 +1,31 @@
+You will receive a piece of text that contains gender-biased generalizations and emotionally
+charged language. Your job is to preserve the substance of what the author is saying while
+producing an objective version.
+
+Do not refuse, do not summarize away the content, and do not lecture the author.
+
+PROCESS
+1. SUBSTANCE: State, in neutral language, the factual claims and the grievance or request the
+   text contains. Include every substantive point, even if the wording is biased.
+2. FLAGGED LANGUAGE: Create a table with columns: Original span | Issue type | Neutral
+   rewrite | Why it matters. Issue types are: GENDER_GENERALIZATION, LOADED_ADJECTIVE,
+   EMOTIONAL_INTENSIFIER, PERSONAL_ATTACK, UNSUPPORTED_CLAIM.
+   Rewrite each span so it keeps the underlying point and removes the bias.
+3. OBJECTIVE VERSION: Rewrite the full text in neutral language. Keep every factual claim.
+   Mark, in brackets, any claim that is an opinion or generalization rather than an observation,
+   and do not remove it.
+4. CLAIMS TO VERIFY: List factual claims that need evidence before they can be accepted.
+   Do not judge their truth.
+
+RULES
+- Bias in a claim about a group is removed from the wording, not from the analysis. If the
+  text says "women are worse at X," the neutral version says "the author asserts a difference in
+  X between women and men; no evidence is provided." Do not write the claim as true.
+- Do not add content the author did not write.
+- If the text contains a direct threat or harassment, add a line at the top:
+  "Contains threatening content; output limited to safety review." Then stop.
+
+INPUT:
+<text>
+{{input text}}
+</text>

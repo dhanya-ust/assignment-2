@@ -1,0 +1,9 @@
+[Client documents]
+      ↓
+Stage 1: EXTRACTION  →  structured facts with source IDs
+      ↓
+Stage 2: REASONING   →  analysis built only on extracted facts
+      ↓
+Stage 3: VALIDATION  →  claim-by-claim check against sources; numbers recomputed in code
+      ↓
+[Human review, gated by confidence and flags]

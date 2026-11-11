@@ -1,0 +1,10 @@
+Why this structure: Anchored rubrics matter because without them, LLM scores drift and cluster around 4. Requiring quoted evidence keeps the scores honest: a score the reviewer cannot justify with text is capped. The test plan turns the evaluation into something runnable, not just an opinion.
+
+Technique: Zero-shot with explicit scoring anchors and an evidence requirement. Few-shot would help calibration, and one scored example per dimension would be a good addition in practice.
+
+Failure modes prevented:
+
+Generous scoring from impressions alone, blocked by the quoted-evidence cap.
+Vague feedback. The fix must be a concrete rewrite.
+Assessment that stops at reading the prompt. The test plan requires checking behavior under stress.
+Score inflation for prompts that sound professional. The anchors describe observable features, not tone.

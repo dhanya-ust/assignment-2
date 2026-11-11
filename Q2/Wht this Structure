@@ -1,0 +1,11 @@
+Why this structure: The steps run in sequence, with data quality first. If the model reasons from inconsistent data before flagging it, the whole differential inherits the error. Separating urgent flags from the differential ensures a dangerous possibility is not lost in a ranked list.
+
+Technique: Zero-shot with a staged, CoT-like procedure. Each step is a bounded, checkable output, which gives the reasoning structure without open-ended narrative.
+
+Failure modes prevented:
+
+Definitive diagnosis, blocked by banned language and framing.
+Confidence labels read as probabilities. The explicit “not a probability” line stops that misreading.
+Silent correction of typos, such as a dose or date. Errors are marked UNVERIFIED instead of fixed.
+Missing a time-sensitive finding because it was buried in the differential. The urgent-flags step is separate.
+False reassurance. The “does not rule out” wording prevents a clean-looking output from implying safety.

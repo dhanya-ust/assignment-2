@@ -1,0 +1,11 @@
+Why this structure: The sections are ordered for how an executive reads: conclusion, ask, evidence, options, actions, risk. Word limits are set per section because “keep it short” is too vague to enforce. The TBD rule stops the model from inventing owners and dates to make the table look complete.
+
+Technique: Zero-shot with an explicit output template and length constraints. One example would help if the output style matters more than the template, but the template alone is usually enough.
+
+Failure modes prevented:
+
+Verbosity. Word caps are enforced per section.
+Buried recommendations. The headline is first and fixed.
+Insight-free bullets. Each insight must contain a number or fact, which blocks generic statements.
+Hedging that leaves the decision unclear.
+Invented owners and dates, which would look credible in a leadership deck and be wrong.

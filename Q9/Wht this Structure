@@ -1,0 +1,10 @@
+Why this structure: The audience sits in one variable, and both branches are specified in full, so one prompt covers both cases. The consistency rules matter most: without them, the two outputs drift apart over time, and the business version can show numbers the technical team cannot reproduce. The default protects against a missing or mistyped audience value.
+
+Technique: Zero-shot with conditional instructions. The conditional structure keeps the prompt a single unit, as the constraint requires.
+
+Failure modes prevented:
+
+Two versions that disagree, which the consistency rules address.
+Technical detail leaking into business output, or simplified numbers leaking into technical output without a flag.
+Silent defaults when the audience is missing. The default is stated.
+Overlength for each audience, enforced by the word limits.

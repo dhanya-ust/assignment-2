@@ -1,0 +1,26 @@
+Stage 1: Data extraction
+
+Use zero-shot with a strict schema. Each extracted fact must carry a source ID and the exact supporting span. Facts without a source are not allowed to pass to Stage 2.
+
+Extract facts from the document below into JSON rows:
+{"fact_id", "statement", "value", "unit", "source_id", "source_span", "date_if_stated"}
+Rules: include only facts explicitly stated. Use null for any field not stated. Do not infer
+values. Do not merge facts from different sources.
+
+Few-shot is useful here only for document types with fixed, unusual layouts, such as a client’s own financial template. Two or three examples of that layout teach the extractor where to find values. For ordinary prose documents, zero-shot is better because examples add the risk of pattern copying.
+
+Stage 2: Reasoning
+
+Use controlled chain-of-thought for analysis tasks, such as hypothesis generation or driver analysis. Each step must reference fact IDs from Stage 1. Reasoning appears in the output as structured steps that can be audited, not as free narrative.
+
+Suppress reasoning for simple tasks such as formatting, lookup, or summarizing a single fact. Reasoning on simple tasks adds cost and creates opportunities for drift without improving accuracy.
+
+Stage 3: Validation
+
+Validation is a separate call with a verifier role. It receives the Stage 2 output and the Stage 1 facts, and checks each claim:
+
+Does the claim cite fact IDs that exist?
+Does the cited fact support the claim as written?
+Is any number in the claim recomputed in code and matched?
+
+Any unsupported claim is removed or marked UNSUPPORTED, and the output is returned with a confidence score. Outputs below a threshold, or with any UNSUPPORTED flag, go to human review.

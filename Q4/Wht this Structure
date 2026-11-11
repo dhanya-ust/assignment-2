@@ -1,0 +1,11 @@
+Why this structure: The process produces a neutral version alongside a record of what changed, so a reviewer can see exactly what was altered and why. The substance step is first because it protects against the failure of ignoring the input. Rule 1 is the key rule: it says how to neutralize a bias without silently treating a biased claim as true.
+
+Technique: Zero-shot with an explicit taxonomy of issue types. The taxonomy gives the model a consistent vocabulary, which matters more than examples here.
+
+Failure modes prevented:
+
+Refusal or ignoring the input, which the substance step blocks.
+Sanitizing away the grievance, which the “preserve every substantive point” rule blocks.
+Moralizing, which the “do not lecture” line blocks.
+Passing bias through the summary. The objective version is required to mark generalizations rather than repeat them as fact.
+Emotional content swaying the output. Emotional intensifiers are explicitly classified and rewritten.

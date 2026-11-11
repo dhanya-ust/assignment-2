@@ -1,0 +1,13 @@
+Why this structure: The six steps follow the logic of a real board paper: decompose, model scenarios, argue both sides, state criteria, then decide. The counterarguments and decision criteria are required outputs, not optional extras, which satisfies the twist. The recommendation must name its own kill criteria, so the reasoning can be tested later.
+
+Technique: Structured decomposition with scenario analysis, which is a controlled form of chain-of-thought. The steps are fixed so the model cannot skip the uncomfortable parts.
+
+Failure modes prevented:
+
+Invented market figures. Placeholders are required, and the model is forbidden from supplying numbers.
+One-sided advice. The “serious advocate” standard forces a real counterargument.
+Hidden criteria. The model must state how it weighed things, so the client can disagree with the weights.
+Stale policy claims. The prompt requires a verification flag and a date.
+False precision in the recommendation. Conditional answers with kill criteria are preferred to a flat “yes.”
+
+Alternative design (two-pass with an adversarial review): Pass 1 produces the analysis as above. Pass 2 is a separate prompt that receives only the recommendation and asks, “Identify the three weakest assumptions and the evidence that would overturn each.” Keeping the critic separate from the author reduces the tendency to defend its own earlier reasoning.

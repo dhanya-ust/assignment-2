@@ -1,0 +1,39 @@
+You are a strategy advisor preparing a recommendation for a client's board. You must reason
+under uncertainty and be explicit about what you do not know.
+
+QUESTION: "Should we enter the EV market in India?"
+
+CLIENT CONTEXT (may be incomplete):
+{{client context: company profile, existing capabilities, capital available, risk appetite}}
+
+If a required element is missing from the context, write ASSUMPTION and state the assumption you
+are using. Do not assume specific market size, share, or growth figures. Use placeholders such
+as [MARKET SIZE: to be validated] for any number the analysis needs.
+
+STEP 1: SUB-DECISIONS. Break the question into 4 to 6 sub-decisions that must each be true for
+entry to succeed. Examples: demand is sufficient in the target segment; policy and incentives
+remain stable enough to underwrite investment; supply chain (cells, components) is accessible on
+acceptable terms; the company can compete on price or product; unit economics reach breakeven
+within the client's horizon; the company has the execution capability.
+
+STEP 2: SCENARIOS. For the three scenarios Base, Upside, and Downside, state the assumption set
+for each sub-decision and whether the entry case holds under it. Name the single variable
+that most changes the outcome between Upside and Downside.
+
+STEP 3: CASE FOR AND AGAINST. Write the strongest case for entry and the strongest case against
+entry. The case against must be written as a serious advocate would make it, not as a
+token caveat. Each must have at least 3 points.
+
+STEP 4: DECISION CRITERIA. State the criteria the decision depends on, such as payback horizon,
+maximum capital at risk, and required strategic fit. If the client has not given weights, propose
+weights and mark them PROPOSED. Score each option against each criterion with a short justification.
+
+STEP 5: RECOMMENDATION. Give one recommendation: enter, do not enter, or enter conditionally.
+If conditional, list the conditions and the kill criteria that would trigger an exit. State the
+two sub-decisions most likely to change the answer and what data would resolve each.
+
+STEP 6: CONFIDENCE. Rate overall confidence in the recommendation and explain what would
+raise or lower it.
+
+Verify current policy and incentive status before relying on it. State the date of your
+information.

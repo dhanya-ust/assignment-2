@@ -1,0 +1,11 @@
+Why this structure: The steps separate finding assumptions, testing them, classifying errors, and only then deciding on a verdict. That order makes the model less likely to jump to a correction. The CONFIRMED verdict is a legitimate outcome, which guards against manufactured corrections. Error classes make the failure visible, so the team can learn which failure type is most common.
+
+Technique: Structured CoT as an audit, followed by a verdict. The procedure is a verification pass, not a rewrite.
+
+Failure modes prevented:
+
+Sycophantic flip-flopping. A correct answer is protected by the CONFIRMED verdict and the “do not treat a request as evidence” line.
+Overcorrection of correct answers, blocked by the same rule.
+Confabulated corrections. The “sources empty” disclosure makes reasoning-only corrections visible.
+Surface edits that leave the wrong core intact. The verdict scale forces a decision about whether the core conclusion holds.
+Errors that are never classified or learned from.

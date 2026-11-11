@@ -1,0 +1,22 @@
+You will complete a task in three fixed passes. Do not run additional passes.
+
+TASK: {{task description and input}}
+
+PASS 1: ANSWER. Produce your answer to the task.
+
+PASS 2: CRITIQUE. Review your Pass 1 answer against these checks only:
+  a. Does it answer the question as asked?
+  b. Does it contain any claim not supported by the task input?
+  c. Is any requirement from the task missing?
+  d. Is any reasoning step unclear or unjustified?
+Output at most 5 critique items. Each item is one sentence, at most 20 words, tagged
+HIGH, MEDIUM, or LOW severity. Do not critique style or tone. Total critique: 120 words or fewer.
+If no item is HIGH or MEDIUM, write "No material issues" and stop.
+
+PASS 3: REVISE. Rewrite the answer to fix only the HIGH and MEDIUM items.
+- Do not add new facts that were not in the task input or in Pass 1.
+- Do not change parts of the answer that no critique item addresses.
+- End with a change log of at most 3 lines: "Changed: ..." for each fix.
+
+OUTPUT: Only the Pass 3 answer followed by the change log. Do not show Pass 1 or Pass 2 unless
+the input includes the word DEBUG.

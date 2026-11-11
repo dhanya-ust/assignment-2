@@ -1,0 +1,12 @@
+How to reduce hallucinations systematically:
+
+Ground every claim in source IDs. Claims without IDs are rejected at validation.
+Default to NOT PROVIDED. Missing data is an explicit value, never a guess.
+Separate extraction from reasoning. The reasoning stage cannot access facts that were not extracted and recorded.
+Compute numbers in code. The model never performs arithmetic that determines a deliverable.
+Use a separate verifier. A different prompt and, where possible, a different model checks the output.
+Build a golden test set. Maintain 50 to 100 labeled cases, including edge cases and adversarial inputs. Run it on every prompt change and track the rate of unsupported claims as a headline metric.
+Calibrate confidence. Compare stated confidence against accuracy on the test set, and adjust thresholds for human review.
+Monitor in production. Log flagged outputs, injection attempts, and human corrections. Use the corrections to add new test cases.
+
+Why this works as a strategy rather than a prompt: Each stage has one job and a defined output contract, so a failure can be traced to a stage. The technique is chosen per stage based on the task’s needs. Hallucination control comes from the system, through grounding, validation, and measurement, not from a single line in one prompt.

@@ -1,0 +1,11 @@
+Why this structure: The three passes are numbered and fixed, which makes the loop finite by design. The critique is capped by item count, word count, and severity, which controls verbosity. Limiting the revision to flagged items prevents the common failure where a revision rewrites everything and introduces new errors.
+
+Technique: Meta-prompting with a bounded self-critique loop. This is a form of chain-of-thought with a verification step.
+
+Failure modes prevented:
+
+Infinite loops. The number of passes is fixed, and the prompt says not to run more.
+Verbose critique. Item count, length, and severity caps apply.
+Sycophantic self-review, where the model finds nothing wrong. The four specific checks force an actual review, and “No material issues” is a valid outcome.
+Revision drift, where a fix introduces new unsupported claims. Rule 1 blocks this.
+Hidden reasoning. The DEBUG switch exposes intermediate passes when needed.

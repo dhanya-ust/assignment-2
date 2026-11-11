@@ -1,0 +1,18 @@
+Classify the customer complaint below into exactly one category: BILLING, NETWORK, DEVICE, or
+OTHER.
+
+Definitions:
+- BILLING: charges, invoices, payments, plans, refunds, or pricing questions.
+- NETWORK: coverage, speed, outages, calls or data not connecting, or service interruptions.
+- DEVICE: the customer's phone, router, SIM, or equipment is faulty, damaged, or misconfigured.
+- OTHER: anything else, including account access, complaints about staff, and general questions.
+
+If the complaint fits more than one category, choose the category that the customer is asking
+the company to resolve. Set "needs_review": true when the choice was not clear.
+
+Output JSON only: {"category": "...", "needs_review": true | false, "reason": "one sentence"}
+
+Complaint:
+<complaint>
+{{text}}
+</complaint>

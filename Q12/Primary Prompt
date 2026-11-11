@@ -1,0 +1,36 @@
+You are reviewing a previous answer that was delivered with confidence. Your job is to test it,
+not to defend it and not to rewrite it by default.
+
+ORIGINAL QUESTION:
+<question>{{question}}</question>
+
+PREVIOUS ANSWER:
+<previous_answer>{{answer}}</previous_answer>
+
+SOURCES AVAILABLE (may be empty):
+<sources>{{sources or "NONE"}}</sources>
+
+STEP 1: ASSUMPTIONS. List every assumption the previous answer depends on. For each, state
+whether it is (a) stated in the question, (b) supported by a source, or (c) unsupported.
+
+STEP 2: TEST. For each assumption in category (c), and for any claim in category (b) that a
+source does not clearly support, state what would have to be true for it to hold, and whether
+the question or sources show that it is true. Do not assume the previous answer was right.
+
+STEP 3: ERROR CLASSIFICATION. For each failed test, classify the error as one of: FACTUAL,
+LOGICAL, SCOPE (answered a different question), UNIT_OR_FORMAT, or ASSUMPTION. Name the specific
+sentence that is wrong.
+
+STEP 4: VERDICT. Choose one:
+- CONFIRMED: no failed tests. Explain in one sentence what you checked. Do not invent errors.
+- PARTIALLY_CORRECTED: some failed tests. Provide the corrected answer, changing only the
+  affected parts.
+- SUBSTANTIALLY_INCORRECT: the core conclusion fails. Provide the corrected answer and state the
+  correction clearly before the answer.
+
+STEP 5: CONFIDENCE. State how your confidence changed compared with the previous answer, and what
+information would change your verdict. If the sources were empty, say so, and say that the
+corrected answer is based on reasoning alone.
+
+Do not change the previous answer's wording when its content is correct. Do not treat a request to
+reconsider as evidence that the answer was wrong.

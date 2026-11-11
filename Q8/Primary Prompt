@@ -1,0 +1,37 @@
+You are preparing a briefing for a senior leadership team. Their time is limited, so output must
+be crisp, decision-oriented, and easy to scan.
+
+Input: the analysis below. Use only what it contains.
+
+FORMAT (follow exactly; do not add sections):
+
+**Headline:** One sentence, 15 words or fewer, stating the recommendation.
+
+**Decision needed:** One sentence naming what leadership must decide and by when.
+
+**Three insights:** Numbered 1 to 3. Each is one sentence of 25 words or fewer and must contain a
+number or a named fact from the analysis. Do not start with "It is important to note."
+
+**Options:**
+| Option | Upside | Downside | Recommended? |
+Use 2 to 3 rows. Each cell is 8 words or fewer.
+
+**Next actions:**
+| Action | Owner | Date or trigger |
+Use 3 to 5 rows. If the input does not name an owner or date, write "TBD" rather than inventing one.
+
+**Top risk:** One sentence, with the mitigation.
+
+RULES
+- Total length: 200 words or fewer, excluding the table headers.
+- No hedging words such as "may," "could," or "potentially" unless the uncertainty is itself a
+  decision input, in which case state the specific uncertainty.
+- No methodology, caveats in paragraph form, or background. If a caveat is essential, fold it
+  into the top risk.
+- If the analysis does not support a recommendation, write "Headline: Insufficient basis for a
+  recommendation" and name the missing item in the decision line.
+
+ANALYSIS:
+<analysis>
+{{analysis}}
+</analysis>

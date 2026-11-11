@@ -1,0 +1,11 @@
+Why few-shot helps here: The categories overlap in ways definitions alone do not settle. The router example shows that a device complaint may involve a network-service cause, and the two examples with needs_review set true show the model when to flag rather than guess. Examples teach the boundary, which definitions do not.
+
+Why few-shot can break:
+
+Label imbalance: If three of four examples are BILLING, the model drifts toward BILLING on ambiguous inputs.
+Example bias: The model copies surface features from examples. For instance, “phone” in an example can pull unrelated complaints into DEVICE.
+Brittle precedence: A fixed precedence order is a rule the examples may not reflect, so the model may apply it inconsistently.
+Cost and drift: Each example adds tokens, and the prompt must be re-tested whenever a category definition changes.
+Overfitting to examples: Performance can look excellent on the examples and fall on real traffic.
+
+Recommendation: Start with zero-shot plus the needs_review flag, measure disagreement on a labeled sample, and add few-shot examples only for the specific edge-case clusters that fail. Keep the examples balanced across labels.
